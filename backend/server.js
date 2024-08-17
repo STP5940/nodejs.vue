@@ -4,8 +4,9 @@ const requestIp = require('request-ip');
 const express = require("express");
 const logger = require('morgan');
 const cors = require("cors");
+const path = require("path");
 
-const path = __dirname + '/app/views/';
+const pathviews = path.join(__dirname, 'app', 'views');
 
 const app = express();
 
@@ -48,7 +49,14 @@ app.use(limiter);
 // Middleware to get user IP address
 app.use(requestIp.mw());
 
-app.use(express.static(path));
+app.use(express.static(pathviews));
+
+require("./app/routes/turorial.routes")(app);
+
+// Handle SPA routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(pathviews, 'index.html'));
+});
 
 var corsOptions = {
   origin: "http://localhost:8081"
@@ -72,12 +80,6 @@ db.sequelize.sync();
 // db.sequelize.sync({ force: true }).then(() => {
 //   console.log("Drop and re-sync db.");
 // });
-
-app.get('/', function (req,res) {
-  res.sendFile(path + "index.html");
-});
-
-require("./app/routes/turorial.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
