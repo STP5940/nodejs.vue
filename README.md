@@ -4,3 +4,13 @@
 ```
 docker-compose up -d
 ```
+
+## Install node_modules
+```
+bun install
+```
+
+## Run the Development Server
+```
+npm run dev
+```

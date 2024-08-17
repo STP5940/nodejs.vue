@@ -1,6 +1,7 @@
 {
-  "name": "vue3-crud",
+  "name": "frontend",
   "version": "0.1.0",
+  "description": "vue3-crud",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",

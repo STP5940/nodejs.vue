@@ -1,0 +1,16 @@
+{
+    "name": "my-monorepo",
+    "private": true,
+    "workspaces": [
+      "backend",
+      "frontend"
+    ],
+    "scripts": {
+      "dev": "turbo run dev --parallel",
+      "build": "turbo run build --filter=frontend"
+    },
+    "dependencies": {
+      "turbo": "^1.0.0"
+    }
+  }
+  
