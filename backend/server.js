@@ -49,15 +49,6 @@ app.use(limiter);
 // Middleware to get user IP address
 app.use(requestIp.mw());
 
-app.use(express.static(pathviews));
-
-require("./app/routes/turorial.routes")(app);
-
-// Handle SPA routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(pathviews, 'index.html'));
-});
-
 var corsOptions = {
   origin: "http://localhost:8081"
 };
@@ -80,6 +71,15 @@ db.sequelize.sync();
 // db.sequelize.sync({ force: true }).then(() => {
 //   console.log("Drop and re-sync db.");
 // });
+
+require("./app/routes/turorial.routes")(app);
+
+app.use(express.static(pathviews));
+
+// Handle SPA routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(pathviews, 'index.html'));
+});
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
