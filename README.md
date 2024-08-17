@@ -14,3 +14,8 @@ bun install
 ```
 npm run dev
 ```
+
+## Build frontend to backend.appv.iews
+```
+npm run build
+```
