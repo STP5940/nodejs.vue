@@ -1,5 +1,17 @@
 # Vue.js + Node.js Express + MySQL
 
+## Credit Source 
+
+- bezkoder [vue-js-node-js-express-mysql-crud-example](https://www.bezkoder.com/vue-js-node-js-express-mysql-crud-example/)
+
+## HTTP Method REST API
+```bash
+GET     — R(etrieve)  เรียกดูข้อมูล
+POST    — C(reate)    เพิ่มข้อมูล
+PUT     — U(pdate)    แก้ไขข้อมูล
+DELETE  — D(elete)    ลบข้อมูล
+```
+
 ## Docker Build Image
 ```
 docker-compose up -d
