@@ -2,7 +2,8 @@
 
 ## Credit Source 
 
-- [bezkoder](https://github.com/bezkoder): [CRUD Example](https://www.bezkoder.com/vue-js-node-js-express-mysql-crud-example/)
+- Github: [bezkoder](https://github.com/bezkoder)
+- Website [CRUD Example](https://www.bezkoder.com/vue-js-node-js-express-mysql-crud-example/)
 
 ## HTTP Method REST API
 ```bash
